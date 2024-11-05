@@ -1,19 +1,16 @@
 #include<stdio.h>
+#include<stdbool.h>
+#define size (10u) // u: unsigned; because size is the size of array, size have to +
 int main(){
-    int size = 10;
+    int sum_arr=0;
     int arr[size];
+    // Enter value and sum 
     for(int i=0;i<size;i++){
         printf("Enter a number %d: ",i);
         scanf("%d",&arr[i]);
-    }
-
-    // Sum of arr
-    int sum_arr;
-    for (int i = 0; i < size; i++)
-    {
         sum_arr += arr[i];
+
     }
-    printf("Sum of arr is %d\n",sum_arr);
 
     // Max and Min value in arr
     int max=arr[0], min=arr[0];
