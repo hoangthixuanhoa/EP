@@ -1,0 +1,22 @@
+*Ngôn ngữ máy (machine language)
+    - Gồm 1 và 0 (tượng trưng cho mức điện áp cao và mức điện áp thấp)
+    - là ngôn ngữ mà máy hiểu đc, nhưng con người khó có thể hiểu đc
+    - là các mã nhị phân
+*Human language: Ngôn ngữ mà con người có thể hiểu đc (VD: C) nhưng máy thì ko hiểu đc
+*nên để máy tính hiểu thì cần 1 vật trung gian: compliler(trình biên dịch) ở ngôn ngữ C là gcc
+    - Trình biên dịch sẽ dịch từ file .c -> assembly (file .s) -> machine language (file .exe)
+
+*Tiền sử lý (.c -> .i): xử lý hết những phần rườm rà của con người và thể hiện tất cả một các đầy đủ
+    - Xóa comment
+    - thể hiện tất cả các giá trị #define; VD #define NUM 10        thì sau tiền xử lý ở file .i những chỗ có NUM được thay thế bằng 10
+    - copy toàn bộ các file .h (thư viện) vào file .i
+* Tổng quan quá trình biên dịch: .c (Human language) -> .i (sau tiền xử lý) -> .s (ngôn ngữ cấp thấp) -> .o (ngôn ngữ máy) -> .exe (file thực thi đc)
+
+
+
+* Cấu trúc trên RAM gồm 5 vùng
+    + Text: Chứa các hàm và nội dung hàm
+    + data: chứa các biến globle đã ĐƯỢC KHỞI TẠO (VD: int a=3;)
+    + bss: các biến globle CHƯA ĐƯỢC KHỞI TẠO (VD: int b;)
+    + heap
+    + stack: chứa các biến local của các hàm
