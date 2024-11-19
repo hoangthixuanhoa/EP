@@ -1,0 +1,14 @@
+TIỀN SỬ LÝ
+* Macro: copy paste vào chỗ nó xhien
+  so sánh function-like macro và function
+    - khác phase thực hiện: function-like macro ở tiền sử lý; function ở running time
+    - function-like macro copy vào trong code -> tăng size code main; function phải đc gọi và sẽ nhảy từ main sang function -> chậm hơn
+    - function có địa chỉ; function-like macro là 1 câu lệch đơn thuần nên không có địa chỉ riêng
+    - khi bị biên dịch function-like macro sẽ ko hiển thị lỗi cụ thể ở đâu, còn function thì có -> function dễ debug hơn
+    - function-like macro đa dạng về kiểu dữ liệu chuyển vào; còn function cần chuyền vào gtri có đúng kiểu dữ liệu
+
+  so sánh inline-function(thay vì gọi hàm thì copy hàm vào code) và function-like macro
+    - 
+
+
+* File inclusion: header file .h; include là copy vào file chính
