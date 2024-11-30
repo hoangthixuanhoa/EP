@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define PI 3.14f
 
-void swap_pointer(int *a, int *b); // Khai báo hàm(function declaration): luôn ở phần đầu của chương trình
+void swap_pointer(int *a, int *b); // Khởi tạo hàm ban đầu (function prototype) : luôn ở phần đầu của chương trình
 int sum(int x, int y); // int ở đầu hàm "int sum()" là function protype
 
 void circle(float radius,  float *perimeter, float *acreage);
@@ -39,7 +39,7 @@ void circle(float r,  float *perimeter, float *acreage)
     *acreage=(r*r*PI);
 }
 
-void swap_pointer(int *a, int *b) 
+void swap_pointer(int *a, int *b) //Khai báo hàm(function declaration)
 {
     // Nội dung hàm (function content)
     int temp = *a;

@@ -1,0 +1,2 @@
+extend: BÁO cho compiler là hàm/biến có thể có hoặc ko tồn tại trong source
+        Nhược điểm phải biết rõ prototype của hàm
