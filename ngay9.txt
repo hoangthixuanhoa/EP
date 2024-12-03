@@ -1,0 +1,24 @@
+scope:  +) khoảng mà nó có thể hiểu đc biến đó 
+    main()
+    {
+        int a; // scope của a là main
+
+        {
+            int a //scope của a la cai ngoac gan nhat
+        }
+    }
+        +) đối với các biến được định nghĩa hoặc hiểu thông qua (extern/include) thì scope của nó là ở file .i
+
+linking
+- internal linking: link các biến trong cùng file
+    VD: File a.c :  int a;
+                    int main() { a=2; }         =>  trong file .i sẽ link "a" (trong a=2) sẽ vs 'a' (trong int a)
+- enternal linking: link khác file
+        File b.c : extern int a;                =>  trong file .i sẽ link "a" (trong file b.c) sẽ vs 'a' (trong int a; trong file a.c)       
+
+"static": không cho phép các file các link tới
+    VD: static int a;
+        extern int a; // Lỗi undefined
+
+        file a.c: static int a;
+        file b.c: static int b; // Không lỗi do nó ko link đến nhau
