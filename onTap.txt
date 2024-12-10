@@ -1,0 +1,25 @@
+-----------------LÝ THUYẾT-----------------
+1.Qua trình bien dich 1 file
+    step1: preprocessor
+    step2: assembler
+
+2.Memory layout
+    data
+    bss
+    text
+    stack
+    heap ->
+
+3.function vs function-like macro
+
+4. inline function vs function-like macro
+
+5.  static, extern
+    translation unit
+
+-----------------THỰC HÀNH-----------------
+1. Layer-> mang/stack/queue
+
+2. Function-like macro: set bit, get bit
+
+3. Cap phat dong

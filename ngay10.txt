@@ -1,0 +1,8 @@
+#ifndef - code - #endif: Kiểm tra xem đã đc define chưa, nếu chưa define thì nó sẽ define và chạy code bên trong
+                        Nếu đã được define thì sẽ bỏ qua, ko define và ko chạy code
+                        Cơ chế để tránh include nhiều lần
+Phải có xuống dòng ở cuối file thư viện; vì khi include nó sẽ copy-paste vào, nên để tránh lỗi khi include nhiều lần
+
+
+----------------
+Cấp phát động: ở trong bộ nhớ heap

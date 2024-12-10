@@ -8,7 +8,7 @@ int check_input_pos_val(int pos, int value)
     if (pos < 0 || pos >= size) {
         printf("Vi tri khong hop le!\n");
         check=1;
-    } 
+    }
     if (value == 0) {
         printf("Gia tri phai khac 0!\n");
         check=1;
@@ -42,14 +42,14 @@ int add_ele(int pos,int val){
         int index=-1;
         for (int i = pos+1; i < size; i++)
         {
-            if(arr[i]==0) 
+            if(arr[i]==0)
             {
                 index=i;
                 break;
             }
-            
+
         }
-         
+
         if (index != -1){
             for (int j = index; j > pos; j--)
             {
@@ -62,8 +62,8 @@ int add_ele(int pos,int val){
             check=1;
         }
         return check;
-        
-        
+
+
     }
 
 }
