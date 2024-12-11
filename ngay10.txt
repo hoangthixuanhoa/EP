@@ -5,4 +5,11 @@ Phải có xuống dòng ở cuối file thư viện; vì khi include nó sẽ c
 
 
 ----------------
-Cấp phát động: ở trong bộ nhớ heap
+ /*
+    Cấp phát bộ nhớ động: cấp phát thêm cho các biến động cần thêm bộ nhớ; cấp phát ở bộ nhớ heap
+    +) malloc(): prototype: void *malloc(size_t size);  trả về con trỏ trỏ tới địa chỉ của ô nhớ (đầu tiên hoặc cuối cùng tùy người code)/NULL, các ô nhớ có giá trị ngẫu nhiên
+    +) (cast-type*)calloc(n, element-size); giống malloc, nhưng các ô nhớ có giá trị bân đâu là 0
+ở đây, n là số lượng phần tử và element-size là kích thước của mỗi phần tử.
+    +) realloc cấp phát cho 1 vùng nhớ mới vs kích thước mới cho con trỏ đã đc link đến 1 vùng nhớ khác (cấp phát cái khác)
+    +) free(): giải phóng vùng nhớ, un-link vùng nhớ đang trỏ vào
+ */

@@ -15,7 +15,7 @@
 
 
 * Cấu trúc trên RAM gồm 5 vùng
-    + Text: Chứa các hàm và nội dung hàm
+    + Text: Chứa các hàm và nội dung hàm/ndung của chương trình
     + data: chứa các biến globle đã ĐƯỢC KHỞI TẠO (VD: int a=3;)
     + bss: các biến globle CHƯA ĐƯỢC KHỞI TẠO (VD: int b;)
     + heap
