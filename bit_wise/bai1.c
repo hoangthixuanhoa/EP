@@ -1,13 +1,13 @@
 #include <stdio.h>
-#define SET(n,val) (val | (1 << n))
-#define CLEAR(n,val) (val & (~(1 << n)))
+#define SET(n,val) ((val) | (1 << (n)))
+#define CLEAR(n,val) ((val) & (~(1 << (n))))
 
 int main()
 
 {
     unsigned char value,value_set,value_clear;
     int n;
-    
+
     printf("Value: ");
     scanf("%c",&value);
     printf("Position: ");

@@ -1,0 +1,126 @@
+offset: địa chỉ đầu tiên của thanh ghi
+
+---STRUCT--- : là một kiểu dữ liệu do người dùng tự định nghĩa
+- Để dễ quản lý hơn
+- Bước khái báo struct không chiếm memory (struct MyStruct{....};), khi nào khai báo biến có kiểu dữ liệu là struct ms chiếm memory (struct MyStruct st1;)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. struct element (Phần tử của struct)
+
+Trong C/C++, struct element là các thành phần (hay trường dữ liệu) bên trong một cấu trúc (struct). Mỗi phần tử có thể thuộc một kiểu dữ liệu khác nhau, chẳng hạn int, float, hoặc thậm chí là một struct khác.
+
+Ví dụ:
+
+struct MyStruct {
+    int a;       // phần tử 1
+    char b;      // phần tử 2
+    float c;     // phần tử 3
+};
+
+Trong ví dụ này:
+
+a, b, và c là các phần tử của struct tên là MyStruct.
+
+
+
+---
+
+2. Kích thước của struct
+
+Kích thước của một struct trong bộ nhớ phụ thuộc vào kích thước của các phần tử và cách chúng được căn chỉnh (alignment). Bộ nhớ của struct thường chứa padding (khoảng trống) để các phần tử nằm trên các địa chỉ phù hợp với yêu cầu của phần cứng.
+
+Tính kích thước:
+
+Kích thước của struct thường lớn hơn hoặc bằng tổng kích thước của các phần tử bên trong, do có thêm padding.
+
+
+Ví dụ:
+
+struct MyStruct {
+    int a;       // 4 byte
+    char b;      // 1 byte
+    float c;     // 4 byte
+};
+// Padding: 3 byte sau 'b' để căn chỉnh 'c' theo biên 4 byte.
+
+Ở đây:
+
+a chiếm 4 byte.
+
+b chiếm 1 byte, kèm 3 byte padding.
+
+c chiếm 4 byte.
+
+Tổng kích thước = 12 byte.
+
+
+Để kiểm tra kích thước, sử dụng toán tử sizeof:
+
+printf("%zu\n", sizeof(MyStruct)); // Kết quả: 12
+
+
+---
+
+3. Căn chỉnh trong struct (Struct Alignment)
+
+Căn chỉnh (alignment) là cách dữ liệu được sắp xếp trong bộ nhớ để đảm bảo hiệu suất phần cứng. Mỗi kiểu dữ liệu có yêu cầu căn chỉnh riêng, và struct sẽ được điều chỉnh để đáp ứng yêu cầu này.
+
+Nguyên tắc căn chỉnh:
+
+Căn chỉnh phần tử: Mỗi phần tử của struct phải nằm ở địa chỉ là bội số của kích thước căn chỉnh của nó (ví dụ: int thường căn chỉnh theo 4 byte).
+
+Căn chỉnh của struct: Kích thước tổng thể của struct phải là bội số của căn chỉnh lớn nhất trong các phần tử.
+
+
+Ví dụ:
+
+struct AlignedStruct {
+    char a;       // 1 byte
+    int b;        // 4 byte, căn chỉnh theo biên 4 byte
+    char c;       // 1 byte
+};
+// Padding: 3 byte sau 'a', 3 byte sau 'c' để căn chỉnh toàn bộ.
+
+Ở đây:
+
+Căn chỉnh của int quyết định căn chỉnh của struct.
+
+Tổng kích thước là 12 byte.
+
+
+Điều chỉnh căn chỉnh:
+
+Có thể sử dụng pragma directives hoặc attributes để kiểm soát padding:
+
+
+#pragma pack(1) // Loại bỏ padding
+struct PackedStruct {
+    char a;
+    int b;
+    char c;
+};
+#pragma pack()  // Khôi phục căn chỉnh mặc định
+
+Với cấu trúc trên, nếu bỏ padding, kích thước sẽ chỉ còn 6 byte.
+Đã gửi
